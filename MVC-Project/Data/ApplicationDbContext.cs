@@ -13,7 +13,7 @@ namespace MVC_Project.Data
         {
             base.OnConfiguring(optionsBuilder);
 
-            optionsBuilder.UseSqlServer("server=localhost;Database=MVC-Project;Trusted_Connection=true;TrustServerCertificate=true");
+            optionsBuilder.UseSqlServer("Server=db29718.public.databaseasp.net; Database=db29718; User Id=db29718; Password=5n-TM6k#8=Qi; Encrypt=True; TrustServerCertificate=True; MultipleActiveResultSets=True;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
