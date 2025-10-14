@@ -1,0 +1,16 @@
+﻿@using MVC_Project.Models
+@model Category
+
+
+<form method="Post" action="/admin/categories/update/@Model.Id">
+    <div class="card-body">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Edit Category</label>
+            <input type="text" name="Name" class="form-control" value="@Model.Name" id="exampleInputEmail1" placeholder="Enter Category Name">
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+    </div>
+    <div class="card-footer">
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </div>
+</form>
