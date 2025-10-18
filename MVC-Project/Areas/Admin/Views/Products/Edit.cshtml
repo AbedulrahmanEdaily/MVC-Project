@@ -1,0 +1,53 @@
+﻿@model Product
+
+
+<form method="Post" action="/admin/products/update/@Model.Id" enctype="multipart/form-data">
+    <div class="card-body">
+        <div class="form-group">
+            <label for="ProductName">Add Products</label>
+            <input type="text" name="Name" class="form-control" value="@Model.Name" id="ProductName" placeholder="Enter Products Name">
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group">
+            <label for="ProductDescription">Add Description</label>
+
+            <textarea name="Description" class="form-control" id="ProductDescription" placeholder="Enter Products Description">@Model.Description</textarea>
+            <span class="text-danger" asp-validation-for="Description"></span>
+        </div>
+        <div class="form-group">
+            <label for="ProductPrice">Add Price</label>
+            <input type="text" name="Price" class="form-control" value="@Model.Price" id="ProductPrice" placeholder="Enter Products Price">
+            <span class="text-danger" asp-validation-for="Price"></span>
+        </div>
+        <div class="form-group">
+            <label for="ProductQuantity">Add Quantity</label>
+            <input type="text" name="Quantity" class="form-control" value="@Model.Quantity" id="ProductQuantity" placeholder="Enter Products Quantity">
+            <span class="text-danger" asp-validation-for="Quantity"></span>
+        </div>
+        <div class="form-group">
+            <label for="ProductImage">Add Image</label>
+            <img src="~/imges/@Model.Image" alt="This Is Image" />
+            <input type="file" name="file" class="form-control" value="@Model.Image" id="ProductImage" placeholder="Enter Products Image">
+            <span class="text-danger" asp-validation-for="Image"></span>
+        </div>
+        <div class="form-group">
+            <label for="ProductImage">Select The Category</label>
+            <select class="form-control" name="CategoryId">
+                @foreach (var item in ViewBag.Categories)
+                {
+                    if(item.Id == Model.CategoryId)
+                    {
+                        <option selected value="@item.Id">@item.Name</option>
+                    }
+                    else
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                }
+            </select>
+        </div>
+    </div>
+    <div class="card-footer">
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </div>
+</form>

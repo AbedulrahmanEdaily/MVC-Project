@@ -11,8 +11,9 @@ namespace MVC_Project.Admin.Controllers
         ApplicationDbContext context = new ApplicationDbContext();
         public IActionResult Index()
         {
-            var Categories = context.Categories.ToList();
-            return View(Categories);
+            ViewBag.Categories = context.Categories.ToList();
+            ViewBag.Products = context.Products.ToList();
+            return View();
         }
     }
 }
