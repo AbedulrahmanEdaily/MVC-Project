@@ -1,37 +1,36 @@
 ﻿@model Product
 
 
-<form method="Post" action="/admin/products/store" enctype="multipart/form-data">
+<form method="Post" asp-action="store" asp-controller="products" asp-area="admin" enctype="multipart/form-data">
     <div class="card-body">
         <div class="form-group">
-            <label for="ProductName">Add Products</label>
-            <input type="text" name="Name" class="form-control" value="@Model.Name" id="ProductName" placeholder="Enter Products Name">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" placeholder="Enter Products Name">
             <span class="text-danger" asp-validation-for="Name"></span>
         </div>
         <div class="form-group">
-            <label for="ProductDescription">Add Description</label>
-
-            <textarea name="Description" class="form-control" id="ProductDescription" placeholder="Enter Products Description">@Model.Description</textarea>
+            <label  asp-for="Description"></label>
+            <textarea asp-for="Description" class="form-control" placeholder="Enter Products Description">@Model.Description</textarea>
             <span class="text-danger" asp-validation-for="Description"></span>
         </div>
         <div class="form-group">
-            <label for="ProductPrice">Add Price</label>
-            <input type="text" name="Price" class="form-control" value="@Model.Price" id="ProductPrice" placeholder="Enter Products Price">
+            <label asp-for="Price"></label>
+            <input asp-for="Price" class="form-control" placeholder="Enter Products Price">
             <span class="text-danger" asp-validation-for="Price"></span>
         </div>
         <div class="form-group">
-            <label for="ProductQuantity">Add Quantity</label>
-            <input type="text" name="Quantity" class="form-control" value="@Model.Quantity" id="ProductQuantity" placeholder="Enter Products Quantity">
+            <label  asp-for="Quantity"></label>
+            <input asp-for="Quantity" class="form-control" placeholder="Enter Products Quantity">
             <span class="text-danger" asp-validation-for="Quantity"></span>
         </div>
         <div class="form-group">
-            <label for="ProductImage">Add Image</label>
-            <input type="file" name="file" class="form-control" value="@Model.Image" id="ProductImage" placeholder="Enter Products Image">
+            <label  asp-for="Image"></label>
+            <input type="file" asp-for="Image" class="form-control" placeholder="Enter Products Image">
             <span class="text-danger" asp-validation-for="Image"></span>
         </div>
         <div class="form-group">
-            <label for="ProductImage">Select The Category</label>
-            <select class="form-control" name="CategoryId">
+            <label  asp-for="CategoryId" ></label>
+            <select asp-for="CategoryId" class="form-control" name="CategoryId">
                 @foreach(var item in ViewBag.Categories)
                 {
                     <option value="@item.Id">@item.Name</option>

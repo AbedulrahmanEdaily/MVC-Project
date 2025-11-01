@@ -1,5 +1,6 @@
 ﻿@using MVC_Project.Models
-@model List<Product>
+@using MVC_Project.ViewModels
+@model List<ProductViewModel>
 <div class="card-body table-responsive p-0">
     <table class="table table-hover text-nowrap">
         <thead>
@@ -25,9 +26,9 @@
                     <td>@item.Description</td>
                     <td>@item.Price</td>
                     <td>@item.Quantity</td>
-                    <td><img src="~/imges/@item.Image" alt="This Is Image" width="50px" /></td>
+                    <td><img src="@item.ImageUrl" alt="This Is Image" width="50px" /></td>
                     <td>
-                        @item.Category.Name
+                        @item.CategoryName
                     </td>
                     <td>
                         <a href="" class="btn btn-outline-info">Details</a>
