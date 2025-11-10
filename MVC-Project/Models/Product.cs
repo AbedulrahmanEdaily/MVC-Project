@@ -23,7 +23,7 @@ namespace MVC_Project.Models
         [Range (1,int.MaxValue)]
         public int Quantity { get; set; }
         [ValidateNever]
-        public string Image {  get; set; }
+        public string? Image {  get; set; }
         public int CategoryId { get; set; }
         [ValidateNever]
         public Category Category { get; set; }
